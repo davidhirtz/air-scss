@@ -1,0 +1,38 @@
+/*
+Admin.
+ */
+$admin-hover-background-color: rgba(248, 175, 175, 0.5) !default;
+$admin-link-color: #f8afaf !default;
+$admin-link-border-color: transparent !default;
+$admin-link-hover-color: $admin-link-color !default;
+$admin-link-hover-background-color: transparent !default;
+$admin-link-active-color: #fff !default;
+$admin-link-active-background-color: #f8afaf !default;
+$admin-link-active-border-color: $admin-link-active-background-color !default;
+
+.admin {
+  display: none;
+  @extend .overlay;
+
+  .is-admin :hover > & {
+    display: block;
+    background-color: $admin-hover-background-color;
+    z-index: 3;
+  }
+}
+
+.admin-btn {
+  color: $admin-link-color !important;
+  border-color: $admin-link-border-color !important;
+
+  &:hover {
+    color: $admin-link-hover-color;
+    background-color: $admin-link-hover-background-color;
+  }
+
+  .is-admin & {
+    background-color: $admin-link-active-background-color !important;
+    color: $admin-link-active-color !important;
+    border-color: $admin-link-active-border-color !important;
+  }
+}

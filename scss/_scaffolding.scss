@@ -1,0 +1,123 @@
+/*
+Variables.
+ */
+$body-min-width: 320px !default;
+$body-font: 16px/1.4 Arial, sans-serif !default;
+$body-color: #000 !default;
+$body-background: #fff !default;
+$body-font-style: normal !default;
+$body-font-weight: 400 !default;
+$body-letter-spacing: normal !default;
+
+$lazyload-transition: opacity .2s !default;
+
+$btn-border: 0 !default;
+$btn-outline: none !default;
+$btn-background-color: transparent !default;
+$btn-cursor: pointer !default;
+$btn-font-size: inherit !default;
+$btn-letter-spacing: inherit !default;
+$btn-font-weight: inherit !default;
+
+/*
+Box sizing.
+Credit: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/*
+Body.
+ */
+html {
+  height: 100%;
+  -ms-text-size-adjust: 100%; // Correct the line height in all browsers.
+  -webkit-text-size-adjust: 100%; // Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); // Changes the default tap highlight to be completely transparent in iOS.
+}
+
+html, body, ul, ol, li, table, td, figure, p, button {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: $body-min-width;
+  font: $body-font;
+  font-style: $body-font-style;
+  font-weight: $body-font-weight;
+  color: $body-color;
+  background: $body-background;
+  overflow-y: scroll;
+  overscroll-behavior: none;
+  letter-spacing: $body-letter-spacing;
+}
+
+/*
+Structure.
+ */
+main, header, nav, section, main, picture {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: $btn-border;
+  outline: $btn-outline;
+  background: $btn-background-color;
+  cursor: $btn-cursor;
+  font-size: $btn-font-size;
+  letter-spacing: $btn-letter-spacing;
+  font-weight: $btn-font-weight;
+}
+
+/*
+Media.
+ */
+img, svg, video {
+  display: block;
+  width: 100%;
+  border-style: none; // Remove the border on images inside links in IE 10-.
+  -webkit-user-drag: none;
+}
+
+svg:not(:root) {
+  overflow: hidden; // Hide the overflow in IE.
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.img-wrap {
+  position: relative;
+  display: block;
+  overflow: hidden;
+
+  & > * {
+    @extend .overlay;
+  }
+}
+
+.lazyload, .lazyloading {
+  opacity: 0;
+}
+
+.lazyloaded {
+  opacity: 1;
+  transition: $lazyload-transition;
+}

@@ -1,0 +1,106 @@
+$container-max-width: 1600px !default;
+
+$content-max-width: (
+        base:496px,
+        sm:none
+) !default;
+
+$wrap-max-width: 1440px !default;
+$wrap-padding: (
+        xs:0 24px,
+        sm:0 30px,
+        xl:0 60px
+) !default;
+
+$box-padding: (
+        base:24px 20px,
+        sm:40px 20px,
+        md:60px 20px,
+        lg:80px 20px,
+        xl:80px 40px
+) !default;
+
+$box-small-padding-down: (
+        xs:24px 60px,
+) !default;
+
+$box-bg-padding: (
+        sm:0 20px,
+        md:0 40px,
+        lg:0 60px,
+        xl:0 40px,
+) !default;
+
+@if $container-max-width {
+  .container {
+    margin: 0 auto;
+    max-width: $container-max-width;
+    overflow-x: hidden;
+  }
+}
+
+@if $content-max-width {
+  .content {
+    margin: 0 auto;
+  }
+
+  @each $breakpoint, $width in $content-max-width {
+    @include media-breakpoint-up($breakpoint) {
+      .content {
+        max-width: $width;
+      }
+    }
+  }
+}
+
+@if $wrap-max-width {
+  .wrap {
+    margin: 0 auto;
+    max-width: $wrap-max-width;
+  }
+}
+
+@if $wrap-padding {
+  @each $breakpoint, $padding in $wrap-padding {
+    @include media-breakpoint-up($breakpoint) {
+      .wrap {
+        padding: $padding;
+      }
+    }
+  }
+}
+
+@if $box-padding {
+  @each $breakpoint, $padding in $box-padding {
+    @include media-breakpoint-up($breakpoint) {
+      .box {
+        padding: $padding;
+      }
+    }
+  }
+}
+
+@if $box-small-padding-down {
+  @each $breakpoint, $padding in $box-small-padding-down {
+    @include media-breakpoint-down($breakpoint) {
+      .box-small {
+        padding: $padding;
+      }
+    }
+  }
+}
+
+@if $box-bg-padding {
+  @each $breakpoint, $padding in $box-bg-padding {
+    @include media-breakpoint-up($breakpoint) {
+      .box-bg {
+        padding: $padding;
+      }
+    }
+  }
+}
+
+.section {
+  display: block;
+  position: relative;
+}

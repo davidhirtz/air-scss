@@ -1,0 +1,112 @@
+/*
+Variables.
+ */
+$form-row-padding: 0 0 20px !default;
+$form-color-error: #EC7878 !default;
+$form-label-padding: 0 0 10px !default;
+
+$form-input-padding: 12px 16px !default;
+$form-input-line-height: 1.3 !default;
+$form-input-font-family: inherit !default;
+$form-input-font-size: 1em !default;
+$form-input-border: 1px solid transparent !default;
+$form-input-border-color-focus: #000 !default;
+$form-input-border-radius: 0 !default;
+$form-input-outline: none !default;
+$form-input-background-color: #F2F2F2 !default;
+$form-input-background-color-focus: $form-input-background-color !default;
+$form-input-color: #000 !default;
+$form-input-background-color-error: $form-color-error !default;
+$form-input-placeholder-color: #636c72 !default;
+$form-input-letter-spacing: inherit !default;
+
+$form-select-icon-width: 48px !default;
+$form-select-icon-height: $form-select-icon-width !default;
+$form-select-icon-url: '/images/site/dropdown.svg' !default;
+
+$button-padding: $form-label-padding !default;
+$button-line-height: $form-input-line-height !default;
+$button-color: $body-color !default;
+$button-background-color: transparent !default;
+$button-border: $form-input-border !default;
+$button-border-radius: $form-input-border-radius !default;
+$button-letter-spacing: inherit !default;
+
+.form-row {
+  padding: $form-row-padding;
+}
+
+.label {
+  display: block;
+  padding: $form-label-padding;
+
+  .is-required & {
+    &::after {
+      content: '*'
+    }
+  }
+
+}
+
+.has-error {
+  color: $form-color-error;
+}
+
+.input {
+  display: block;
+  margin: 0;
+  padding: $form-input-padding;
+  line-height: $form-input-line-height;
+  width: 100%;
+  border: $form-input-border;
+  border-radius: $form-input-border-radius;
+  font-family: $form-input-font-family;
+  font-size: $form-input-font-size;
+  background-color: $form-input-background-color;
+  letter-spacing: $form-input-letter-spacing;
+  color: $form-input-color;
+  outline: $form-input-outline;
+  appearance: none;
+
+  &:focus {
+    border-color: $form-input-border-color-focus;
+    background-color: $form-input-background-color-focus;
+  }
+
+  &::placeholder {
+    color: $form-input-placeholder-color;
+    line-height: inherit;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+  }
+
+  .has-error & {
+    background-color: $form-input-background-color-error;
+  }
+}
+
+.select {
+  position: relative;
+
+  &::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $form-select-icon-width;
+    height: $form-select-icon-height;
+    background: url(#{$form-select-icon-url}) no-repeat center;
+    pointer-events: none;
+    content: '';
+  }
+}
+
+.btn {
+  display: inline-block; // For <a> buttons
+  padding: $button-padding;
+  line-height: $button-line-height;
+  color: $button-color;
+  background: $button-background-color;
+  border: $button-border;
+  border-radius: $button-border-radius;
+  letter-spacing: $button-letter-spacing;
+}

@@ -1,0 +1,59 @@
+/*
+Cookie consent.
+ */
+$cc-margin-x: 10px !default;
+$cc-margin-y: 10px !default;
+$cc-padding: 12px !default;
+$cc-background-color: #293948 !default;
+$cc-color: #fff !default;
+$cc-border-radius: 8px !default;
+$cc-link-color: inherit !default;
+$cc-text-decoration: underline !default;
+$cc-button-color: $cc-link-color !default;
+$cc-button-margin: 1em 1em 0 0 !default;
+$cc-button-padding: 0 !default;
+$cc-button-background-color: transparent !default;
+$cc-button-border: 0;
+$cc-md-width: 330px !default;
+$cc-md-margin: 30px !default;
+$cc-md-padding: 20px !default;
+
+#cc {
+  display: none;
+  position: fixed;
+  margin: $cc-margin-y $cc-margin-x;
+  padding: $cc-padding;
+  right: 0;
+  bottom: 0;
+  width: calc(100% - 2 * #{$cc-margin-x});
+  overflow: hidden;
+  z-index: 9999;
+  background-color: $cc-background-color;
+  border-radius: $cc-border-radius;
+  color: $cc-color;
+
+  a {
+    color: $cc-link-color;
+    text-decoration: $cc-text-decoration;
+  }
+
+  &.active {
+    display: block;
+  }
+}
+
+.cc-button {
+  margin: $cc-button-margin;
+  padding: $cc-button-padding;
+  color: $cc-button-color;
+  border: $cc-button-border;
+  background: $cc-button-background-color;
+}
+
+@include media-breakpoint-up(md) {
+  #cc {
+    width: $cc-md-width;
+    margin: $cc-md-margin;
+    padding: $cc-md-padding;
+  }
+}

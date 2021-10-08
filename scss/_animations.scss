@@ -1,0 +1,109 @@
+/*
+Animations.
+ */
+$animation: 1s forwards !default;
+$animation-fade-in-up: 100px !default;
+$animation-fade-in-left: false !default;
+$animation-fade-in-right: false !default;
+$animation-pop-up: false !default;
+
+.animate {
+  visibility: hidden;
+  animation: $animation;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation-name: fadeIn;
+}
+
+@if $animation-fade-in-up {
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translate3d(0, #{$animation-fade-in-up}, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+      visibility: visible;
+    }
+  }
+
+  .fade-in-up {
+    animation-name: fadeInUp;
+  }
+}
+
+@if $animation-fade-in-left {
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translate3d(#{$animation-fade-in-left}, 0, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+      visibility: visible;
+    }
+  }
+
+  .fade-in-left {
+    animation-name: fadeInLeft;
+  }
+}
+
+@if $animation-fade-in-right {
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translate3d(#{$animation-fade-in-right}, 0, 0);
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+      visibility: visible;
+    }
+  }
+
+  .fade-in-right {
+    animation-name: fadeInRight;
+  }
+}
+
+@if $animation-pop-up {
+  @keyframes popUp {
+    from {
+      transform: translateY(100%);
+    }
+
+    to {
+      transform: none;
+      visibility: visible;
+    }
+  }
+
+  .pop-up-wrap {
+    display: block;
+    overflow: hidden;
+  }
+
+  .pop-up {
+    display: block;
+    animation: popUp .4s forwards;
+  }
+}

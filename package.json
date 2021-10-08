@@ -1,0 +1,16 @@
+{
+  "name": "air-scss",
+  "version": "1.0",
+  "description": "A simple SCSS boilerplate for small to medium websites",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidhirtz/air-scss.git"
+  },
+  "keywords": [
+    "SCSS"
+  ],
+  "author": "David Hirtz",
+  "bugs": {
+    "url": "https://github.com/davidhirtz/air-scss/issues"
+  }
+}

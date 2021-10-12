@@ -24,14 +24,6 @@ $form-select-icon-width: 48px !default;
 $form-select-icon-height: $form-select-icon-width !default;
 $form-select-icon-url: '/images/site/dropdown.svg' !default;
 
-$button-padding: $form-label-padding !default;
-$button-line-height: $form-input-line-height !default;
-$button-color: $body-color !default;
-$button-background-color: transparent !default;
-$button-border: $form-input-border !default;
-$button-border-radius: $form-input-border-radius !default;
-$button-letter-spacing: inherit !default;
-
 .form-row {
   padding: $form-row-padding;
 }
@@ -98,15 +90,4 @@ $button-letter-spacing: inherit !default;
     pointer-events: none;
     content: '';
   }
-}
-
-.btn {
-  display: inline-block; // For <a> buttons
-  padding: $button-padding;
-  line-height: $button-line-height;
-  color: $button-color;
-  background: $button-background-color;
-  border: $button-border;
-  border-radius: $button-border-radius;
-  letter-spacing: $button-letter-spacing;
 }

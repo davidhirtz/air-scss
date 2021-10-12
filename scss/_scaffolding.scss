@@ -21,16 +21,11 @@ $btn-font-weight: inherit !default;
 
 /*
 Box sizing.
-Credit: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
  */
-html {
-  box-sizing: border-box;
-}
-
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 /*

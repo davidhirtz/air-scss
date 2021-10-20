@@ -14,9 +14,9 @@ $cc-button-margin: 1em 1em 0 0 !default;
 $cc-button-padding: 0 !default;
 $cc-button-background-color: transparent !default;
 $cc-button-border: 0;
-$cc-md-width: 330px !default;
-$cc-md-margin: 30px !default;
-$cc-md-padding: 20px !default;
+$cc-sm-width: 330px !default;
+$cc-sm-margin: 30px !default;
+$cc-sm-padding: 20px !default;
 
 #cc {
   display: none;
@@ -50,10 +50,10 @@ $cc-md-padding: 20px !default;
   background: $cc-button-background-color;
 }
 
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(sm) {
   #cc {
-    width: $cc-md-width;
-    margin: $cc-md-margin;
-    padding: $cc-md-padding;
+    width: $cc-sm-width;
+    margin: $cc-sm-margin;
+    padding: $cc-sm-padding;
   }
 }

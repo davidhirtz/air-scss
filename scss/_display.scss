@@ -171,7 +171,7 @@ $columns: (
   @each $breakpoint in $column-breakpoints {
     @include media-breakpoint-up($breakpoint) {
       .w-#{$size}#{breakpoint-infix($breakpoint)} {
-        width: $size / $column-count * 100%;
+        width: math.div($size, $column-count) * 100%;
       }
     }
   }

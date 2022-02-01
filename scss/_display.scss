@@ -1,14 +1,12 @@
 @use "sass:math";
 
-/*
-Variables.
- */
 $display: (
         hidden:(base, xs, sm, md, lg, xl),
         block:(base, xs, sm, md, lg, xl),
         flex:(base, sm, md),
 ) !default;
 
+$flex-row: false !default;
 $flex-row-reverse: base !default;
 $flex-wrap: base, md, lg !default;
 $flex-nowrap: false !default;
@@ -59,6 +57,16 @@ $columns: (
     @include media-breakpoint-up($breakpoint) {
       .flex-nowrap#{breakpoint-infix($breakpoint)} {
         flex-wrap: nowrap;
+      }
+    }
+  }
+}
+
+@if $flex-row {
+  @each $breakpoint in $flex-row {
+    @include media-breakpoint-up($breakpoint) {
+      .row#{breakpoint-infix($breakpoint)} {
+        flex-flow: row;
       }
     }
   }

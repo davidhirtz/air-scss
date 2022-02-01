@@ -15,9 +15,11 @@ $btn-border: 0 !default;
 $btn-outline: none !default;
 $btn-background-color: transparent !default;
 $btn-cursor: pointer !default;
+$btn-font-family:inherit !default;
 $btn-font-size: inherit !default;
-$btn-letter-spacing: inherit !default;
 $btn-font-weight: inherit !default;
+$btn-letter-spacing: inherit !default;
+$btn-line-height: inherit !default;
 
 /*
 Box sizing.
@@ -71,9 +73,11 @@ button {
   outline: $btn-outline;
   background: $btn-background-color;
   cursor: $btn-cursor;
+  font-family: $btn-font-family;
   font-size: $btn-font-size;
-  letter-spacing: $btn-letter-spacing;
   font-weight: $btn-font-weight;
+  letter-spacing: $btn-letter-spacing;
+  line-height: $btn-line-height;
 }
 
 /*

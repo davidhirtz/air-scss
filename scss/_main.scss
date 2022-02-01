@@ -1,4 +1,13 @@
+/*
+Default classes for the main layout.
+
+ > ".container" can be used for an absolute max width of the site
+ > ".content" should be used to wrap all content (outside of modals, menus, etc.)
+ > ".wrap" is used to wrap a group of sections
+ > ".box" is the default padding for single sections
+ */
 $container-max-width: 1600px !default;
+$container-position: relative !default;
 
 $content-max-width: (
         base:496px,
@@ -20,19 +29,11 @@ $box-padding: (
         xl:80px 40px
 ) !default;
 
-$box-small-padding-down: (
-        xs:24px 60px,
-) !default;
-
-$box-bg-padding: (
-        sm:0 20px,
-        md:0 40px,
-        lg:0 60px,
-        xl:0 40px,
-) !default;
+$bled: base;
 
 @if $container-max-width {
   .container {
+    position: $container-position;
     margin: 0 auto;
     max-width: $container-max-width;
     overflow-x: hidden;
@@ -80,21 +81,12 @@ $box-bg-padding: (
   }
 }
 
-@if $box-small-padding-down {
-  @each $breakpoint, $padding in $box-small-padding-down {
-    @include media-breakpoint-down($breakpoint) {
-      .box-small {
-        padding: $padding;
-      }
-    }
-  }
-}
-
-@if $box-bg-padding {
-  @each $breakpoint, $padding in $box-bg-padding {
+@if ($bled) {
+  @each $breakpoint in $bled {
     @include media-breakpoint-up($breakpoint) {
-      .box-bg {
-        padding: $padding;
+      .bled#{breakpoint-infix($breakpoint)} {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
       }
     }
   }

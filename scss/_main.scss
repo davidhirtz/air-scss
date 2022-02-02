@@ -6,7 +6,10 @@ Default classes for the main layout.
  > ".wrap" is used to wrap a group of sections
  > ".box" is the default padding for single sections
  */
-$container-max-width: 1600px !default;
+$container-max-width: (
+        base:1600px
+) !default;
+
 $container-position: relative !default;
 
 $content-max-width: (
@@ -14,7 +17,10 @@ $content-max-width: (
         sm:none
 ) !default;
 
-$wrap-max-width: 1440px !default;
+$wrap-max-width: (
+        base: 1440px
+) !default;
+
 $wrap-padding: (
         xs:0 24px,
         sm:0 30px,
@@ -30,13 +36,21 @@ $box-padding: (
 ) !default;
 
 $bled: base;
+$section-position: relative !default;
 
 @if $container-max-width {
   .container {
     position: $container-position;
     margin: 0 auto;
-    max-width: $container-max-width;
     overflow-x: hidden;
+  }
+
+  @each $breakpoint, $width in $container-max-width {
+    @include media-breakpoint-up($breakpoint) {
+      .container {
+        max-width: $width;
+      }
+    }
   }
 }
 
@@ -57,7 +71,14 @@ $bled: base;
 @if $wrap-max-width {
   .wrap {
     margin: 0 auto;
-    max-width: $wrap-max-width;
+  }
+
+  @each $breakpoint, $width in $wrap-max-width {
+    @include media-breakpoint-up($breakpoint) {
+      .wrap {
+        max-width: $width;
+      }
+    }
   }
 }
 
@@ -94,5 +115,5 @@ $bled: base;
 
 .section {
   display: block;
-  position: relative;
+  position: $section-position;
 }

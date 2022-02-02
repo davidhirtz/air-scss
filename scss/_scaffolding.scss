@@ -8,6 +8,7 @@ $body-background: #fff !default;
 $body-font-style: normal !default;
 $body-font-weight: 400 !default;
 $body-letter-spacing: normal !default;
+$body-transition: false !default;
 
 $lazyload-transition: opacity .2s !default;
 
@@ -15,7 +16,7 @@ $btn-border: 0 !default;
 $btn-outline: none !default;
 $btn-background-color: transparent !default;
 $btn-cursor: pointer !default;
-$btn-font-family:inherit !default;
+$btn-font-family: inherit !default;
 $btn-font-size: inherit !default;
 $btn-font-weight: inherit !default;
 $btn-letter-spacing: inherit !default;
@@ -55,6 +56,10 @@ body {
   overflow-y: scroll;
   overscroll-behavior: none;
   letter-spacing: $body-letter-spacing;
+
+  @if ($body-transition) {
+    transition: $body-transition;
+  }
 }
 
 /*
@@ -88,6 +93,10 @@ img, svg, video {
   width: 100%;
   border-style: none; // Remove the border on images inside links in IE 10-.
   -webkit-user-drag: none;
+}
+
+picture img {
+  height: 100%; // Makes sure image fit picture wrap.
 }
 
 svg:not(:root) {

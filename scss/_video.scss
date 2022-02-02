@@ -1,0 +1,44 @@
+$video-btn-width: 60px !default;
+$video-btn-height: 60px !default;
+$video-btn-border-radius: 50% !default;
+$video-btn-background: #fff url(/images/site/play.svg) no-repeat center !default;
+$video-btn-transform: translate(-50% -50%) !default;
+$video-btn-transform-bg-active: #d6f5f6 !default;
+$video-bg: #dedfd6 !default;
+$video-iframe-z-index: 3 !default;
+
+.video-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: $video-btn-width;
+  height: $video-btn-height;
+  border-radius: $video-btn-border-radius;
+  background: $video-btn-background;
+  transform: $video-btn-transform;
+}
+
+.has-video {
+  background-color: $video-bg;
+  //noinspection CssInvalidPropertyValue
+  -webkit-mask-image: -webkit-radial-gradient(white, black); // This fixes border-radius issues in Safari.
+
+  & > picture {
+    opacity: 0;
+  }
+}
+
+.video {
+  &:hover {
+    .video-btn {
+      background-color: $video-btn-transform-bg-active;
+    }
+  }
+}
+
+.video-iframe {
+  display: none;
+  background-color: $video-bg;
+  transform: scale(1.01); // Hides borders in iframe (YouTube)
+  z-index: $video-iframe-z-index; // Hides copyright
+}

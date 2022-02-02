@@ -9,6 +9,7 @@ $admin-link-hover-background-color: transparent !default;
 $admin-link-active-color: #fff !default;
 $admin-link-active-background-color: #f8afaf !default;
 $admin-link-active-border-color: $admin-link-active-background-color !default;
+$admin-z-index: 3 !default;
 
 .admin {
   display: none;
@@ -17,7 +18,7 @@ $admin-link-active-border-color: $admin-link-active-background-color !default;
   .is-admin :hover > & {
     display: block;
     background-color: $admin-hover-background-color;
-    z-index: 3;
+    z-index: $admin-z-index;
   }
 }
 

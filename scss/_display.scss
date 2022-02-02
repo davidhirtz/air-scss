@@ -13,12 +13,14 @@ $flex-nowrap: false !default;
 $flex-column: false !default;
 $flex-column-reverse: false !default;
 $flex-1: base !default;
-$align-start: base !default;
 $align-center: base !default;
-$justify-start: false !default;
-$justify-end: false !default;
-$justify-center: base !default;
+$align-end: base !default;
+$align-start: base !default;
+$justify-around: false !default;
 $justify-between: base !default;
+$justify-center: base !default;
+$justify-end: false !default;
+$justify-start: false !default;
 
 $column-count: 12 !default;
 $columns: (
@@ -125,6 +127,16 @@ $columns: (
   }
 }
 
+@if $align-end {
+  @each $breakpoint in $align-end {
+    @include media-breakpoint-up($breakpoint) {
+      .align-end#{breakpoint-infix($breakpoint)} {
+        align-items: flex-end;
+      }
+    }
+  }
+}
+
 @if $align-start {
   @each $breakpoint in $align-start {
     @include media-breakpoint-up($breakpoint) {
@@ -135,33 +147,11 @@ $columns: (
   }
 }
 
-@if $justify-start {
-  @each $breakpoint in $justify-start {
+@if $justify-around {
+  @each $breakpoint in $justify-around {
     @include media-breakpoint-up($breakpoint) {
-      .justify-start#{breakpoint-infix($breakpoint)} {
-        justify-content: flex-start;
-      }
-    }
-  }
-}
-
-
-@if $justify-end {
-  @each $breakpoint in $justify-end {
-    @include media-breakpoint-up($breakpoint) {
-      .justify-end#{breakpoint-infix($breakpoint)} {
-        justify-content: flex-end;
-      }
-    }
-  }
-}
-
-
-@if $justify-center {
-  @each $breakpoint in $justify-center {
-    @include media-breakpoint-up($breakpoint) {
-      .justify-center#{breakpoint-infix($breakpoint)} {
-        justify-content: center;
+      .justify-around#{breakpoint-infix($breakpoint)} {
+        justify-content: space-around;
       }
     }
   }
@@ -176,6 +166,38 @@ $columns: (
     }
   }
 }
+
+@if $justify-center {
+  @each $breakpoint in $justify-center {
+    @include media-breakpoint-up($breakpoint) {
+      .justify-center#{breakpoint-infix($breakpoint)} {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@if $justify-end {
+  @each $breakpoint in $justify-end {
+    @include media-breakpoint-up($breakpoint) {
+      .justify-end#{breakpoint-infix($breakpoint)} {
+        justify-content: flex-end;
+      }
+    }
+  }
+}
+
+
+@if $justify-start {
+  @each $breakpoint in $justify-start {
+    @include media-breakpoint-up($breakpoint) {
+      .justify-start#{breakpoint-infix($breakpoint)} {
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+
 
 @each $size, $column-breakpoints in $columns {
   @each $breakpoint in $column-breakpoints {

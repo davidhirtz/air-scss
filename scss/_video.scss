@@ -2,8 +2,8 @@ $video-btn-width: 60px !default;
 $video-btn-height: 60px !default;
 $video-btn-border-radius: 50% !default;
 $video-btn-background: #fff url(/images/site/play.svg) no-repeat center !default;
-$video-btn-transform: translate(-50% -50%) !default;
-$video-btn-transform-bg-active: #d6f5f6 !default;
+$video-btn-background-active: #f1f1f1 !default;
+$video-btn-transform: translate(-50%, -50%) !default;
 $video-bg: #dedfd6 !default;
 $video-iframe-z-index: 3 !default;
 
@@ -31,7 +31,7 @@ $video-iframe-z-index: 3 !default;
 .video {
   &:hover {
     .video-btn {
-      background-color: $video-btn-transform-bg-active;
+      background-color: $video-btn-background-active;
     }
   }
 }

@@ -4,6 +4,7 @@ $button-color: $body-color !default;
 $button-background-color: transparent !default;
 $button-border: 1px solid transparent !default;
 $button-border-radius: 0 !default;
+$button-font-weight: normal !default;
 $button-letter-spacing: inherit !default;
 
 .btn {
@@ -14,5 +15,6 @@ $button-letter-spacing: inherit !default;
   background: $button-background-color;
   border: $button-border;
   border-radius: $button-border-radius;
+  font-weight: $button-font-weight;
   letter-spacing: $button-letter-spacing;
 }

@@ -11,6 +11,7 @@ $container-max-width: (
 ) !default;
 
 $container-position: relative !default;
+$container-x-overflow: hidden !default;
 
 $content-max-width: (
         base:496px,
@@ -35,16 +36,23 @@ $box-padding: (
         xl:80px 40px
 ) !default;
 
-$bled: base;
+$bled: base !default;
 $section-position: relative !default;
+$section-display: block !default;
+
+.container {
+  position: $container-position;
+
+  @if $container-max-width {
+    margin: 0 auto;
+
+    @if $container-x-overflow {
+      overflow-x: $container-x-overflow;
+    }
+  }
+}
 
 @if $container-max-width {
-  .container {
-    position: $container-position;
-    margin: 0 auto;
-    overflow-x: hidden;
-  }
-
   @each $breakpoint, $width in $container-max-width {
     @include media-breakpoint-up($breakpoint) {
       .container {
@@ -114,6 +122,6 @@ $section-position: relative !default;
 }
 
 .section {
-  display: block;
+  display: $section-display;
   position: $section-position;
 }

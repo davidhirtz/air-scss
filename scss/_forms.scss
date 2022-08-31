@@ -20,6 +20,7 @@ $form-input-background-color-error: $form-color-error !default;
 $form-input-placeholder-color: #636c72 !default;
 $form-input-letter-spacing: inherit !default;
 
+$form-select: true !default;
 $form-select-icon-width: 48px !default;
 $form-select-icon-height: $form-select-icon-width !default;
 $form-select-icon-url: '/images/site/dropdown.svg' !default;
@@ -76,18 +77,20 @@ $form-select-icon-url: '/images/site/dropdown.svg' !default;
   }
 }
 
-.select {
-  position: relative;
+@if $form-select {
+  .select {
+    position: relative;
 
-  &::after {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: $form-select-icon-width;
-    height: $form-select-icon-height;
-    background: url(#{$form-select-icon-url}) no-repeat center;
-    pointer-events: none;
-    content: '';
+    &::after {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: $form-select-icon-width;
+      height: $form-select-icon-height;
+      background: url(#{$form-select-icon-url}) no-repeat center;
+      pointer-events: none;
+      content: '';
+    }
   }
 }

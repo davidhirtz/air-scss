@@ -15,6 +15,7 @@ $lazyload-transition: opacity .2s !default;
 $btn-border: 0 !default;
 $btn-outline: none !default;
 $btn-background-color: transparent !default;
+$btn-color: inherit !default;
 $btn-cursor: pointer !default;
 $btn-font-family: inherit !default;
 $btn-font-size: inherit !default;
@@ -77,6 +78,7 @@ button {
   border: $btn-border;
   outline: $btn-outline;
   background: $btn-background-color;
+  color: $btn-color;
   cursor: $btn-cursor;
   font-family: $btn-font-family;
   font-size: $btn-font-size;

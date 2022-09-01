@@ -4,7 +4,8 @@ Cookie consent.
 $cc-margin-x: 10px !default;
 $cc-margin-y: 10px !default;
 $cc-padding: 12px !default;
-$cc-background-color: #293948 !default;
+$cc-background-color: #293948 !default; // Backwards compatibility
+$cc-background: $cc-background-color !default;
 $cc-color: #fff !default;
 $cc-border-radius: 8px !default;
 $cc-link-color: inherit !default;
@@ -28,7 +29,7 @@ $cc-sm-padding: 20px !default;
   width: calc(100% - 2 * #{$cc-margin-x});
   overflow: hidden;
   z-index: 9999;
-  background-color: $cc-background-color;
+  background: $cc-background;
   border-radius: $cc-border-radius;
   color: $cc-color;
 

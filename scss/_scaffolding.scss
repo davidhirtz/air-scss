@@ -1,5 +1,5 @@
 /*
-Variables.
+Scaffolding.
  */
 $body-min-width: 320px !default;
 $body-font: 16px/1.4 Arial, sans-serif !default;
@@ -10,18 +10,19 @@ $body-font-weight: 400 !default;
 $body-letter-spacing: normal !default;
 $body-transition: false !default;
 
-$lazyload-transition: opacity .2s !default;
+$button-border: 0 !default;
+$button-outline: none !default;
+$button-background-color: transparent !default;
+$button-color: inherit !default;
+$button-cursor: pointer !default;
+$button-font-family: inherit !default;
+$button-font-size: inherit !default;
+$button-font-weight: inherit !default;
+$button-letter-spacing: inherit !default;
+$button-line-height: inherit !default;
 
-$btn-border: 0 !default;
-$btn-outline: none !default;
-$btn-background-color: transparent !default;
-$btn-color: inherit !default;
-$btn-cursor: pointer !default;
-$btn-font-family: inherit !default;
-$btn-font-size: inherit !default;
-$btn-font-weight: inherit !default;
-$btn-letter-spacing: inherit !default;
-$btn-line-height: inherit !default;
+$lazyload: true !default;
+$lazyload-transition: opacity .2s !default;
 
 /*
 Box sizing.
@@ -75,16 +76,16 @@ ul {
 }
 
 button {
-  border: $btn-border;
-  outline: $btn-outline;
-  background: $btn-background-color;
-  color: $btn-color;
-  cursor: $btn-cursor;
-  font-family: $btn-font-family;
-  font-size: $btn-font-size;
-  font-weight: $btn-font-weight;
-  letter-spacing: $btn-letter-spacing;
-  line-height: $btn-line-height;
+  border: $button-border;
+  outline: $button-outline;
+  background: $button-background-color;
+  color: $button-color;
+  cursor: $button-cursor;
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  letter-spacing: $button-letter-spacing;
+  line-height: $button-line-height;
 }
 
 /*
@@ -99,10 +100,6 @@ img, svg, video {
 
 picture img {
   height: 100%; // Makes sure image fit picture wrap.
-}
-
-svg:not(:root) {
-  overflow: hidden; // Hide the overflow in IE.
 }
 
 .overlay {
@@ -123,11 +120,13 @@ svg:not(:root) {
   }
 }
 
-.lazyload, .lazyloading {
-  opacity: 0;
-}
+@if $lazyload {
+  .lazyload, .lazyloading {
+    opacity: 0;
+  }
 
-.lazyloaded {
-  opacity: 1;
-  transition: $lazyload-transition;
+  .lazyloaded {
+    opacity: 1;
+    transition: $lazyload-transition;
+  }
 }

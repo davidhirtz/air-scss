@@ -1,0 +1,32 @@
+$ie-background: linear-gradient(137deg, rgba(235, 139, 139, .6) 0%, rgba(206, 67, 67, 0.3) 100%) !default;
+$ie-window-max-width: 960px !default;
+$ie-window-box-shadow: 0 1px 28px 0 rgba(0, 0, 0, 0.1) !default;
+$ie-window-border-radius: 3px !default;
+
+// IE fix
+@media all and (-ms-high-contrast: none) {
+  .ie {
+    display: block !important;
+    position: fixed;
+    background-image: $ie-background;
+    z-index: 1000;
+  }
+
+  .ie-window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    max-width: $ie-window-max-width;
+    width: calc(100% - 40px);
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: $ie-window-box-shadow;
+    border-radius: $ie-window-border-radius;
+
+    // Important here is needed for IE 11 ...
+    @include media-breakpoint-up(sm) {
+      padding: 80px 100px !important;
+    }
+  }
+}

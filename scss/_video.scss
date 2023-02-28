@@ -7,6 +7,8 @@ $video-btn-transform: translate(-50%, -50%) !default;
 $video-btn-transition: background-color .3s !default;
 $video-bg: #dedfd6 !default;
 $video-iframe-z-index: 3 !default;
+$video-cc-bg: rgba(0, 0, 0, .7) !default;
+$video-cc-color: #fff !default;
 
 .video-btn {
   position: absolute;
@@ -40,6 +42,13 @@ $video-iframe-z-index: 3 !default;
         background-color: $video-btn-background-active;
       }
     }
+  }
+}
+
+@if $video-cc-bg {
+  .video-cc {
+    background: $video-cc-bg;
+    color: $video-cc-color;
   }
 }
 

@@ -30,6 +30,7 @@ $text-right: falde !default;
 
 $strong-font-weight: 700 !default;
 $paragraph-margin-top: 1em !default;
+$headline-margin-top: false !default;
 
 $link-color: inherit !default;
 $link-hover-color: $link-color !default;
@@ -52,6 +53,14 @@ Text.
 @each $headline in $headlines {
   #{$headline}, .#{$headline} {
     @extend %headline;
+  }
+}
+
+@if($headline-margin-top) {
+  @each $headline in $headlines {
+    p + #{$headline} {
+      margin-top: $headline-margin-top;
+    }
   }
 }
 
@@ -95,8 +104,10 @@ Text.
   }
 }
 
-p:not(:first-child) {
-  margin-top: $paragraph-margin-top;
+@if ($paragraph-margin-top) {
+  p:not(:first-child) {
+    margin-top: $paragraph-margin-top;
+  }
 }
 
 strong, .strong {

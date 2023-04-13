@@ -3,7 +3,6 @@ $swiper-3d-effects: false !default;
 $swiper-fade: false !default;
 
 .swiper {
-  //overflow: hidden;
   /* Fix of Webkit flickering */
   z-index: 1;
 }

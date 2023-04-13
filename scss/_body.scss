@@ -1,0 +1,25 @@
+$body-background: #fff !default;
+$body-color: #000 !default;
+$body-font-style: normal !default;
+$body-font-weight: 400 !default;
+$body-font-size: 16px !default;
+$body-font-family: Arial, sans-serif !default;
+$body-line-height: 1.4 !default;
+$body-font: #{$body-font-size}/#{$body-line-height} $body-font-family !default;
+$body-letter-spacing: normal !default;
+$body-min-width: 320px !default;
+$body-overflow-y: scroll !default;
+$body-overscroll-behavior: none !default;
+$body-transition: false !default;
+
+body {
+  background: $body-background;
+  color: $body-color;
+  font-style: $body-font-style;
+  font-weight: $body-font-weight;
+  font: $body-font;
+  letter-spacing: $body-letter-spacing;
+  min-width: $body-min-width;
+  overflow-y: $body-overflow-y;
+  overscroll-behavior: $body-overscroll-behavior;
+}

@@ -1,16 +1,23 @@
 {
   "name": "air-scss",
-  "version": "1.3.4",
+  "version": "2.0.0",
   "description": "A simple SCSS boilerplate for small to medium websites",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx sass scss/utilities.scss css/utilities.css"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/davidhirtz/air-scss.git"
   },
-  "keywords": [
-    "SCSS"
-  ],
   "author": "David Hirtz",
   "bugs": {
     "url": "https://github.com/davidhirtz/air-scss/issues"
+  },
+  "devDependencies": {
+    "chokidar": "^3.5.3",
+    "purgecss": "^5.0.0",
+    "sass": "^1.62.0"
   }
 }

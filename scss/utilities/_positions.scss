@@ -1,0 +1,13 @@
+@import "../mixins/breakpoints";
+
+$positions: absolute, fixed, relative, static, sticky;
+
+@each $name in $breakpointNames {
+  @include media-breakpoint-up($name) {
+    @each $value in $positions {
+      .#{$value}#{breakpoint-infix($name)} {
+        position: $value;
+      }
+    }
+  }
+}

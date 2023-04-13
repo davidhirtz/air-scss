@@ -1,0 +1,33 @@
+@import "../mixins/breakpoints";
+
+$text-align: center, left, justify, right !default;
+$text-transform: capitalize, lowercase, uppercase !default;
+
+@each $name in $breakpointNames {
+  @include media-breakpoint-up($name) {
+    @each $value in $text-align {
+      .text-#{$value}#{breakpoint-infix($name)} {
+        text-align: $value;
+      }
+    }
+    @each $value in $text-transform {
+      .#{$value}#{breakpoint-infix($name)} {
+        text-transform: $value;
+      }
+    }
+  }
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+}
+
+.text-clip {
+  text-overflow: clip;
+}

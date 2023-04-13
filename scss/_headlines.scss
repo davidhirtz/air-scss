@@ -1,0 +1,55 @@
+@import "mixins/breakpoints";
+
+$headlines: (
+        h1:(
+                _:30px,
+                lg:36px,
+                xl:40px,
+        ),
+        h2:(
+                _:26px,
+                lg:30px,
+                xl:34px,
+        ),
+        h3:(
+                _:22px,
+                lg:26px,
+                xl:28px,
+        ),
+        h4:(
+                _:18px,
+                lg:20px,
+                xl:22px,
+        )
+) !default;
+
+$headline-margin: 0 !default;
+$headline-font-family: inherit !default;
+$headline-font-weight: inherit !default;
+$headline-line-height: 1.3 !default;
+$headline-letter-spacing: inherit !default;
+
+%headline {
+  margin: $headline-margin;
+  padding: 0;
+  font-family: $headline-font-family;
+  font-weight: $headline-font-weight;
+  line-height: $headline-line-height;
+  letter-spacing: $headline-letter-spacing;
+}
+
+@each $headline in map-keys($headlines) {
+  #{$headline} {
+    @extend %headline;
+  }
+}
+
+@each $tag, $breakpoints in $headlines {
+  #{$tag} {
+    @each $breakpoint, $size in $breakpoints {
+      @include media-breakpoint-up($breakpoint) {
+        font-size: $size;
+      }
+    }
+  }
+}

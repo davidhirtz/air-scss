@@ -1,0 +1,35 @@
+$prose-margin: 1em 0 !default;
+$prose-tags: p, h1, h2, h3, ul, ol, table !default;
+$prose-btn-consecutive-margin: 1em !default;
+$prose-list-style-image: false !default;
+
+%prose-inline-link {
+}
+
+.prose {
+  @each $tag in $prose-tags {
+    #{$tag} {
+      margin: $prose-margin;
+    }
+  }
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  a:not(.btn) {
+    @extend %prose-inline-link;
+  }
+
+  @if ($prose-btn-consecutive-margin) {
+    .btn + .btn {
+      margin-left: $prose-btn-consecutive-margin;
+    }
+  }
+
+  @if ($prose-list-style-image) {
+    ul {
+      list-style-image: url($prose-list-style-image);
+    }
+  }
+}

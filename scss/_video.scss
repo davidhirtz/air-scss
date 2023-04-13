@@ -36,11 +36,9 @@ $video-cc-color: #fff !default;
 }
 
 @if $video-btn-background-active {
-  .video {
-    &:hover {
-      .video-btn {
-        background-color: $video-btn-background-active;
-      }
+  .video:hover {
+    .video-btn {
+      background-color: $video-btn-background-active;
     }
   }
 }

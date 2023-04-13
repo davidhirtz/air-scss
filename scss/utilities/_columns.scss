@@ -1,0 +1,15 @@
+@use "sass:math";
+@import "../mixins/breakpoints";
+
+$columns: 12;
+
+
+@each $name in $breakpointNames {
+  @include media-breakpoint-up($name) {
+    @for $i from 1 through $columns {
+      .w-#{$i}#{breakpoint-infix($name)} {
+        width: math.div($i, $columns) * 100%;
+      }
+    }
+  }
+}

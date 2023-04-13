@@ -2,6 +2,7 @@
 Animations.
  */
 $animation: 1s forwards !default;
+$animation-fade-in: true !default;
 $animation-fade-in-up: 100px !default;
 $animation-fade-in-left: false !default;
 $animation-fade-in-right: false !default;
@@ -13,14 +14,16 @@ $animation-pop-up: false !default;
   animation-fill-mode: both;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
+@if $animation-fade-in {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
 
-  to {
-    visibility: visible;
-    opacity: 1;
+    to {
+      visibility: visible;
+      opacity: 1;
+    }
   }
 }
 

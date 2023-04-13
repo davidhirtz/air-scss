@@ -1,3 +1,5 @@
+@import "mixins/breakpoints";
+
 /*
 Cookie consent.
  */
@@ -9,12 +11,7 @@ $cc-background: $cc-background-color !default;
 $cc-color: #fff !default;
 $cc-border-radius: 8px !default;
 $cc-link-color: inherit !default;
-$cc-text-decoration: underline !default;
-$cc-button-color: $cc-link-color !default;
-$cc-button-margin: 1em 1em 0 0 !default;
-$cc-button-padding: 0 !default;
-$cc-button-background-color: transparent !default;
-$cc-button-border: 0 !default;
+$cc-link-text-decoration: underline !default;
 $cc-sm-width: 330px !default;
 $cc-sm-margin: 30px !default;
 $cc-sm-padding: 20px !default;
@@ -35,20 +32,12 @@ $cc-sm-padding: 20px !default;
 
   a {
     color: $cc-link-color;
-    text-decoration: $cc-text-decoration;
+    text-decoration: $cc-link-text-decoration;
   }
 
   &.active {
     display: block;
   }
-}
-
-.cc-button {
-  margin: $cc-button-margin;
-  padding: $cc-button-padding;
-  color: $cc-button-color;
-  border: $cc-button-border;
-  background: $cc-button-background-color;
 }
 
 @include media-breakpoint-up(sm) {

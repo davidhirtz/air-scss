@@ -1,0 +1,29 @@
+$link-color: inherit !default;
+$link-hover-color: $link-color !default;
+$link-text-decoration: none !default;
+$link-transition: color .2s !default;
+$link-outline: none !default;
+
+$strong-font-weight: 700 !default;
+
+a {
+  color: $link-color;
+  text-decoration: $link-text-decoration;
+  outline: $link-outline;
+
+  @if ($link-transition) {
+    transition: $link-transition;
+  }
+
+  @if ($link-hover-color) {
+    &:hover, &:active {
+      color: $link-hover-color;
+    }
+  }
+}
+
+@if ($strong-font-weight) {
+  strong, .strong {
+    font-weight: $strong-font-weight;
+  }
+}

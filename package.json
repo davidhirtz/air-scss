@@ -1,6 +1,6 @@
 {
   "name": "air-scss",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A simple SCSS boilerplate for small to medium websites",
   "type": "module",
   "main": "index.js",
@@ -15,9 +15,11 @@
   "bugs": {
     "url": "https://github.com/davidhirtz/air-scss/issues"
   },
-  "devDependencies": {
+  "dependencies": {
     "chokidar": "^3.5.3",
-    "purgecss": "^5.0.0",
+    "purgecss": "^5.0.0"
+  },
+  "devDependencies": {
     "sass": "^1.62.0"
   }
 }

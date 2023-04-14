@@ -1,0 +1,60 @@
+@import "mixins/breakpoints";
+
+/*
+Default classes for the main layout.
+
+ > ".container" can be used for an absolute max width of the site
+ > ".content" should be used to wrap all content (outside of modals, menus, etc.)
+ > ".wrap" is used to wrap a group of sections
+ > ".box" is the default padding for single sections
+ */
+$container-max-width: false !default;
+$container-min-height: 100vh !default;
+$content-mobile-max-width: 496px !default;
+$wrap-max-width: false !default;
+$wrap-padding: 0 var(--wrap-x) !default;
+$box-padding: var(--box-y) var(--box-x) !default;
+$section-position: relative !default;
+
+.container {
+  @if $container-max-width {
+    margin: 0 auto;
+    max-width: $container-max-width;
+  }
+
+  @if $container-min-height {
+    min-height: $container-min-height;
+  }
+}
+
+.content {
+  @if ($content-mobile-max-width) {
+    @include media-breakpoint-down(xs) {
+      margin: 0 auto;
+      max-width: $content-mobile-max-width;
+    }
+  }
+}
+
+.wrap {
+  @if ($wrap-max-width) {
+    margin: 0 auto;
+    max-width: $wrap-max-width;
+  }
+
+  @if ($wrap-padding) {
+    padding: $wrap-padding;
+  }
+}
+
+.box {
+  @if ($box-padding) {
+    padding: $box-padding;
+  }
+}
+
+.section {
+  @if ($section-position) {
+    position: $section-position;
+  }
+}

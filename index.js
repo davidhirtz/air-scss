@@ -3,8 +3,10 @@ import fs from "fs";
 import {PurgeCSS} from 'purgecss';
 
 /**
+ * Runs PurgeCSS on `options.css` files for the given content files and writes the result to the output file.
+ *
  * @param options.content {Array}
- * @param options.css {Array}
+ * @param options.css {Array} default: ['../npm/src/air-scss/css/utilities.css']
  * @param options.output {String}
  * @param options.watch {Boolean}
  *

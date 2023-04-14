@@ -1,5 +1,5 @@
 $prose-margin: 1em 0 !default;
-$prose-tags: p, h1, h2, h3, ul, ol, table !default;
+$prose-tags: '>*' !default;
 $prose-btn-consecutive-margin: 1em !default;
 $prose-list-style-image: false !default;
 
@@ -15,6 +15,10 @@ $prose-list-style-image: false !default;
 
   & > :first-child {
     margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
   }
 
   a:not(.btn) {

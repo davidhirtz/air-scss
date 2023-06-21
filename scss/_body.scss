@@ -22,4 +22,8 @@ body {
   min-width: $body-min-width;
   overflow-y: $body-overflow-y;
   overscroll-behavior: $body-overscroll-behavior;
+
+  @if ($body-transition) {
+    transition: $body-transition;
+  }
 }

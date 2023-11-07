@@ -13,13 +13,20 @@ import {PurgeCSS} from 'purgecss';
  * @returns {Promise<void>}
  */
 export default (options) => {
-    let cssContent = fs.readFileSync(options.output, 'utf8');
-
     options.css ??= ['../npm/src/air-scss/css/utilities.css'];
+    options.watch ??= process.argv.slice(2).includes('--watch');
+
+    if (!fs.existsSync(options.output)) {
+        fs.writeFileSync(options.output, '');
+        console.log(`Created output file ${options.output}`);
+    }
+
+    let cssContent = fs.readFileSync(options.output, 'utf8');
 
     const purge = async () => {
         const startTime = Date.now();
 
+        // noinspection JSUnresolvedReference
         const result = await new PurgeCSS().purge({
             css: options.css,
             content: options.content,
@@ -29,11 +36,7 @@ export default (options) => {
         result.forEach((result) => purgedCssContent += result.css)
 
         if (purgedCssContent !== cssContent) {
-            fs.writeFile(options.output, purgedCssContent, (err) => {
-                if (err) {
-                    return console.log(err);
-                }
-
+            fs.writeFile(options.output, purgedCssContent, () => {
                 console.log(`Rebuild ${options.output} in ${Date.now() - startTime}ms`);
                 cssContent = purgedCssContent;
             });
@@ -51,7 +54,6 @@ export default (options) => {
         });
 
         return purge().then(() => isRunning = false);
-
     }
 
     return purge();

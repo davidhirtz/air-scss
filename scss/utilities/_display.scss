@@ -1,4 +1,4 @@
-@import "../mixins/breakpoints";
+@use "../mixins/breakpoints" as *;
 
 $display: block, flex, grid, inline, inline-block, inline-flex !default;
 
@@ -9,76 +9,58 @@ $display: block, flex, grid, inline, inline-block, inline-flex !default;
         display: $value;
       }
     }
-
     .hidden#{breakpoint-infix($name)} {
       display: none;
     }
-
     .flex-col#{breakpoint-infix($name)} {
       flex-flow: column;
     }
-
     .flex-col-reverse#{breakpoint-infix($name)} {
       flex-flow: column-reverse;
     }
-
     .flex-row#{breakpoint-infix($name)} {
       flex-flow: row;
     }
-
     .flex-row-reverse#{breakpoint-infix($name)} {
       flex-flow: row-reverse;
     }
-
     .items-center#{breakpoint-infix($name)} {
       align-items: center;
     }
-
     .items-end#{breakpoint-infix($name)} {
       align-items: flex-end;
     }
-
     .items-start#{breakpoint-infix($name)} {
       align-items: flex-start;
     }
-
     .justify-around#{breakpoint-infix($name)} {
       justify-content: space-around;
     }
-
     .justify-between#{breakpoint-infix($name)} {
       justify-content: space-between;
     }
-
     .justify-center#{breakpoint-infix($name)} {
       justify-content: center;
     }
-
     .justify-end#{breakpoint-infix($name)} {
       justify-content: flex-end;
     }
-
     .justify-start#{breakpoint-infix($name)} {
       justify-content: flex-start;
     }
-
     .grow#{breakpoint-infix($name)} {
       flex-grow: 1;
       min-width: 1px; // see https://css-tricks.com/flexbox-truncated-text/
     }
-
     .grow-0#{breakpoint-infix($name)} {
       flex-grow: 0;
     }
-
     .flex-nowrap#{breakpoint-infix($name)} {
       flex-wrap: nowrap;
     }
-
     .flex-wrap#{breakpoint-infix($name)} {
       flex-wrap: wrap;
     }
-
     .flex-wrap-reverse#{breakpoint-infix($name)} {
       flex-wrap: wrap-reverse;
     }

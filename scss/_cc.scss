@@ -1,8 +1,5 @@
-@import "mixins/breakpoints";
+@use "mixins/breakpoints" as *;
 
-/*
-Cookie consent.
- */
 $cc-margin-x: 10px !default;
 $cc-margin-y: 10px !default;
 $cc-padding: 12px !default;

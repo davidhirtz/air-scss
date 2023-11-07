@@ -1,4 +1,4 @@
-@import "../mixins/breakpoints";
+@use "../mixins/breakpoints" as *;
 
 $text-align: center, left, justify, right !default;
 $text-transform: capitalize, lowercase, uppercase !default;
@@ -17,17 +17,14 @@ $text-transform: capitalize, lowercase, uppercase !default;
     }
   }
 }
-
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
 .text-ellipsis {
   text-overflow: ellipsis;
 }
-
 .text-clip {
   text-overflow: clip;
 }

@@ -1,68 +1,54 @@
-@import "../mixins/breakpoints";
+@use "../mixins/breakpoints" as *;
 
 @each $name in $breakpointNames {
   @include media-breakpoint-up($name) {
     .m-0#{breakpoint-infix($name)} {
       margin: 0;
     }
-
     .mx-0#{breakpoint-infix($name)} {
       margin-left: 0;
       margin-right: 0;
     }
-
     .my-0#{breakpoint-infix($name)} {
       margin-top: 0;
       margin-bottom: 0;
     }
-
     .mt-0#{breakpoint-infix($name)} {
       margin-top: 0;
     }
-
     .mr-0#{breakpoint-infix($name)} {
       margin-right: 0;
     }
-
     .mb-0#{breakpoint-infix($name)} {
       margin-bottom: 0;
     }
-
     .ml-0#{breakpoint-infix($name)} {
       margin-left: 0;
     }
-
     .mx-auto#{breakpoint-infix($name)} {
       margin-left: auto;
       margin-right: auto;
     }
-
     .p-0#{breakpoint-infix($name)} {
       padding: 0;
     }
-
     .px-0#{breakpoint-infix($name)} {
       padding-left: 0;
       padding-right: 0;
     }
-
     .py-0#{breakpoint-infix($name)} {
       padding-top: 0;
       padding-bottom: 0;
     }
-
     .pt-0#{breakpoint-infix($name)} {
       padding-top: 0;
     }
-
     .pr-0#{breakpoint-infix($name)} {
       padding-right: 0;
     }
-
     .pb-0#{breakpoint-infix($name)} {
       padding-bottom: 0;
     }
-
     .pl-0#{breakpoint-infix($name)} {
       padding-left: 0;
     }

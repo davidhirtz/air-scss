@@ -3,7 +3,6 @@ $ie-window-max-width: 960px !default;
 $ie-window-box-shadow: 0 1px 28px 0 rgba(0, 0, 0, 0.1) !default;
 $ie-window-border-radius: 3px !default;
 
-// IE fix
 @media all and (-ms-high-contrast: none) {
   .ie {
     display: block !important;

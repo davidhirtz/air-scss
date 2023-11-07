@@ -1,8 +1,7 @@
 @use "sass:math";
-@import "../mixins/breakpoints";
+@use "../mixins/breakpoints" as *;
 
 $columns: 12;
-
 
 @each $name in $breakpointNames {
   @include media-breakpoint-up($name) {

@@ -1,4 +1,4 @@
-@import "mixins/breakpoints";
+@use "../mixins/breakpoints" as *;
 
 $headlines: (
         h1:(
@@ -42,6 +42,7 @@ $headline-letter-spacing: inherit !default;
   #{$headline} {
     @extend %headline;
   }
+
 }
 
 @each $tag, $breakpoints in $headlines {
@@ -52,4 +53,5 @@ $headline-letter-spacing: inherit !default;
       }
     }
   }
+
 }

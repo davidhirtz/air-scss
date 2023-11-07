@@ -13,7 +13,7 @@ import {PurgeCSS} from 'purgecss';
  * @returns {Promise<void>}
  */
 export default (options) => {
-    options.css ??= ['../npm/src/air-scss/css/utilities.css'];
+    options.css ??= ['node_modules/air-scss/css/utilities.css'];
     options.watch ??= process.argv.slice(2).includes('--watch');
 
     if (!fs.existsSync(options.output)) {

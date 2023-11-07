@@ -1,5 +1,5 @@
-@import "utilities/columns";
-@import "utilities/display";
-@import "utilities/positions";
-@import "utilities/spacings";
-@import "utilities/text";
+@use "utilities/display";
+@use "utilities/positions";
+@use "utilities/spacings";
+@use "utilities/texts";
+@use "utilities/widths";

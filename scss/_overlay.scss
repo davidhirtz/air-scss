@@ -1,13 +1,5 @@
 $canvas-overflow: hidden !default;
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 .canvas {
   position: relative;
   display: block;
@@ -16,4 +8,12 @@ $canvas-overflow: hidden !default;
   & > * {
     @extend .overlay;
   }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

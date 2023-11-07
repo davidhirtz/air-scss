@@ -1,6 +1,6 @@
 {
   "name": "air-scss",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A simple SCSS boilerplate for small to medium websites",
   "type": "module",
   "main": "index.js",

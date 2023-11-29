@@ -15,9 +15,9 @@ $body-transition: false !default;
 body {
   background: $body-background;
   color: $body-color;
+  font: $body-font;
   font-style: $body-font-style;
   font-weight: $body-font-weight;
-  font: $body-font;
   letter-spacing: $body-letter-spacing;
   min-width: $body-min-width;
   overflow-y: $body-overflow-y;

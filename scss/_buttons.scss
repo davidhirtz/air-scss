@@ -1,6 +1,5 @@
-$button-border: 0 !default;
-$button-outline: none !default;
 $button-background-color: transparent !default;
+$button-border: 0 !default;
 $button-color: inherit !default;
 $button-cursor: pointer !default;
 $button-font-family: inherit !default;
@@ -8,11 +7,12 @@ $button-font-size: inherit !default;
 $button-font-weight: inherit !default;
 $button-letter-spacing: inherit !default;
 $button-line-height: inherit !default;
+$button-outline: none !default;
+$button-text-transform: inherit !default;
 
 button {
-  border: $button-border;
-  outline: $button-outline;
   background: $button-background-color;
+  border: $button-border;
   color: $button-color;
   cursor: $button-cursor;
   font-family: $button-font-family;
@@ -20,4 +20,6 @@ button {
   font-weight: $button-font-weight;
   letter-spacing: $button-letter-spacing;
   line-height: $button-line-height;
+  outline: $button-outline;
+  text-transform: $button-text-transform;
 }
